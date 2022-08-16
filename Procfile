@@ -1,1 +1,1 @@
-web: gunicorn  PlanDubai.wsgi --bind
+web: gunicorn  PlanDubai.wsgi
