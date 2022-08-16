@@ -1,1 +1,1 @@
-web: gunicorn  PlanDubai.wsgi
+web: gunicorn  PlanDubai.wsgi --log-file -
