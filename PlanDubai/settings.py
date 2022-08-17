@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-ngc=m7mx=1so11+&w(mh84uz%$40h998ba&!+ok@y_fbhd3e_1
 # DEBUG = True
 DEBUG = False
 # ALLOWED_HOSTS = [os.environ.get('ALLOWED_HOSTS', '').split(',')]
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['plandubaivisit.herokuapp.com','localhost']
 
 
 # Application definition
@@ -86,12 +86,12 @@ WSGI_APPLICATION = 'PlanDubai.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
@@ -102,16 +102,16 @@ WSGI_APPLICATION = 'PlanDubai.wsgi.application'
 #         'PORT': '5432',
 #     }
 # }
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'PlanDubaiVisitDB',
-        'USER': 'TahirHashmi',
-        'PASSWORD': 'tahirshah786',
-        'HOST': 'database-1.c76pojh5ewes.ap-south-1.rds.amazonaws.com',
-        'PORT': '5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'PlanDubaiVisitDB',
+#         'USER': 'TahirHashmi',
+#         'PASSWORD': 'tahirshah786',
+#         'HOST': 'database-1.c76pojh5ewes.ap-south-1.rds.amazonaws.com',
+#         'PORT': '5432',
+#     }
+# }
 import dj_database_url
 DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
@@ -170,6 +170,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
+    "https://plandubaivisit.com/",
 ]
 # CORS_ALLOW_ALL_ORIGINS: True
 
