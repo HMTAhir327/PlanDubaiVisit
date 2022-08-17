@@ -1,1 +1,1 @@
-web: gunicorn  PlanDubai.wsgi --log-file -
+web: gunicorn  PlanDubai.wsgi --timeout 30 --log-file - 
