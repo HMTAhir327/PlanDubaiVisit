@@ -2,6 +2,14 @@ from django.db import models
 from ckeditor_uploader.fields import RichTextUploadingField
 
 # Create your models here.
+class Slides(models.Model):
+    image = models.ImageField(null=True, blank=True)
+    isActive = models.BooleanField(default=False)
+
+    def __str__(self):
+        return str(self.id)
+
+
 class Offers(models.Model):
     video_file = models.FileField(upload_to='Offers_files',null=False, blank=False)
     title = models.CharField(max_length=300, null=False, blank=False)
