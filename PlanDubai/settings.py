@@ -85,12 +85,12 @@ WSGI_APPLICATION = 'PlanDubai.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': BASE_DIR / 'db.sqlite3',
+    }
+}
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
@@ -101,16 +101,16 @@ WSGI_APPLICATION = 'PlanDubai.wsgi.application'
 #         'PORT': '5432',
 #     }
 # }
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.postgresql_psycopg2',
-        'NAME': 'PlanDubaiVisitDB',
-        'USER': 'TahirHashmi',
-        'PASSWORD': 'tahirshah786',
-        'HOST': 'database-1.c76pojh5ewes.ap-south-1.rds.amazonaws.com',
-        'PORT': '5432',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+#         'NAME': 'PlanDubaiVisitDB',
+#         'USER': 'TahirHashmi',
+#         'PASSWORD': 'tahirshah786',
+#         'HOST': 'database-2.c76pojh5ewes.ap-south-1.rds.amazonaws.com',
+#         'PORT': '5432',
+#     }
+# }
 
 
 
