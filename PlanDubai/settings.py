@@ -111,8 +111,10 @@ DATABASES = {
 #         'PORT': '5432',
 #     }
 # }
-import dj_database_url
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+
+
+
+
 
 
 # Password validation
@@ -156,7 +158,13 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media')
 
 
-CKEDITOR_UPLOAD_PATH = os.path.join(MEDIA_ROOT, 'ckeditor/uploads')
+# for local
+# CKEDITOR_UPLOAD_PATH = os.path.join(MEDIA_ROOT, 'ckeditor/uploads')
+# for live
+import dj_database_url
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+CKEDITOR_UPLOAD_PATH = 'storages.backends.s3boto3.S3Boto3Storage/ckeditor/uploads'
+
 
 
 
