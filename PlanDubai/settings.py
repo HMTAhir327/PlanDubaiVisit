@@ -85,12 +85,12 @@ WSGI_APPLICATION = 'PlanDubai.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
@@ -101,16 +101,16 @@ DATABASES = {
 #         'PORT': '5432',
 #     }
 # }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.postgresql_psycopg2',
-#         'NAME': 'PlanDubaiVisitDB',
-#         'USER': 'TahirHashmi',
-#         'PASSWORD': 'tahirshah786',
-#         'HOST': 'database-1.c76pojh5ewes.ap-south-1.rds.amazonaws.com',
-#         'PORT': '5432',
-#     }
-# }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'NAME': 'PlanDubaiVisitDB',
+        'USER': 'TahirHashmi',
+        'PASSWORD': 'tahirshah786',
+        'HOST': 'database-1.c76pojh5ewes.ap-south-1.rds.amazonaws.com',
+        'PORT': '5432',
+    }
+}
 
 
 
@@ -161,8 +161,8 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media')
 # for local
 # CKEDITOR_UPLOAD_PATH = os.path.join(MEDIA_ROOT, 'ckeditor/uploads')
 # for live
-# import dj_database_url
-# DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+import dj_database_url
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 CKEDITOR_UPLOAD_PATH = 'storages.backends.s3boto3.S3Boto3Storage/ckeditor/uploads'
 
 
