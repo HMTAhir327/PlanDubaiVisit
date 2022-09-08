@@ -1,6 +1,6 @@
 from rest_framework import viewsets
-from .models import Offers
-from .serializers import OfferSerializer
+from .models import Offers,Slides
+from .serializers import OfferSerializer,SlidesSerializer
 
 # Create your views here.
 class TicketsViewSet(viewsets.ModelViewSet):
@@ -10,10 +10,10 @@ class TicketsViewSet(viewsets.ModelViewSet):
     queryset = Offers.objects.all()
     serializer_class = OfferSerializer
 
-# class OffersViewSet(viewsets.ModelViewSet):
-#     """
-#     A simple ViewSet for viewing offers.
-#     """
-#     queryset = Offers.objects.filter(isOffer=True)
-#     serializer_class = OfferSerializer
+class SlidesViewSet(viewsets.ModelViewSet):
+    """
+    A simple ViewSet for viewing offers.
+    """
+    queryset = Slides.objects.all()
+    serializer_class = SlidesSerializer
 

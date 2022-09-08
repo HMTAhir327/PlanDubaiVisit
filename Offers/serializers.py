@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from Offers.models import Offers
+from Offers.models import Offers,Slides
 
 SEARCH_PATTERN = ['/media/C%3A/Users/HM%20TAhir/Desktop/faiz%20bhai/PlanDubaiVisit/Backend/static/media/ckeditor/','"/media/ckeditor/']
 SITE_DOMAIN = "http://127.0.0.1:8000"
@@ -33,4 +33,7 @@ class OfferSerializer(serializers.ModelSerializer):
         model = Offers
         fields = '__all__'
 
-    
+class SlidesSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Slides
+        fields = '__all__'

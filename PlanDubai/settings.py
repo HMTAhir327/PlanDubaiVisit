@@ -159,11 +159,11 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media')
 
 
 # for local
-# CKEDITOR_UPLOAD_PATH = os.path.join(MEDIA_ROOT, 'ckeditor/uploads')
+CKEDITOR_UPLOAD_PATH = os.path.join(MEDIA_ROOT, 'ckeditor/uploads')
 # for live
-import dj_database_url
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
-CKEDITOR_UPLOAD_PATH = 'storages.backends.s3boto3.S3Boto3Storage/ckeditor/uploads'
+# import dj_database_url
+# DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+# CKEDITOR_UPLOAD_PATH = 'storages.backends.s3boto3.S3Boto3Storage/ckeditor/uploads'
 
 
 
