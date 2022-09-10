@@ -86,11 +86,11 @@ WSGI_APPLICATION = 'PlanDubai.wsgi.application'
 # https://docs.djangoproject.com/en/4.1/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'default': {
+            'ENGINE': 'django.db.backends.sqlite3',
+            'NAME': BASE_DIR / 'db.sqlite3',
+        }
     }
-}
 # DATABASES = {
 #     'default': {
 #         'ENGINE': 'django.db.backends.postgresql',
@@ -111,9 +111,6 @@ DATABASES = {
 #         'PORT': '5432',
 #     }
 # }
-
-
-
 
 
 
@@ -158,13 +155,23 @@ MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'static', 'media')
 
 
-# for local
-# CKEDITOR_UPLOAD_PATH = os.path.join(MEDIA_ROOT, 'ckeditor/uploads')
-# for live
-import dj_database_url
-DATABASES['default'] = dj_database_url.config(conn_max_age=600)
-CKEDITOR_UPLOAD_PATH = 'storages.backends.s3boto3.S3Boto3Storage/ckeditor/uploads'
 
+Database_URL = 'postgres://TahirHashmi:tahirshah786@database-2.c76pojh5ewes.ap-south-1.rds.amazonaws.com:5432/PlanDubaiVisitDB'
+Live = True
+if(Live):
+    # for live
+    import dj_database_url
+    # for Heroku
+    # DATABASES['default'] = dj_database_url.config(conn_max_age=600)
+
+    # for EC2
+    # DATABASES['default'] = dj_database_url.config(default=os.environ.get('DATABASE_URL'))
+    DATABASES['default'] = dj_database_url.config(default=Database_URL)
+    CKEDITOR_UPLOAD_PATH = 'storages.backends.s3boto3.S3Boto3Storage/ckeditor/uploads'
+else:
+    # for local
+    CKEDITOR_UPLOAD_PATH = os.path.join(MEDIA_ROOT, 'ckeditor/uploads')
+    
 
 
 
