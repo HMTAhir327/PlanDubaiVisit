@@ -181,7 +181,7 @@ else:
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 #for error not secure
-SECURE_CROSS_ORIGIN_OPENER_POLICY = None
+# SECURE_CROSS_ORIGIN_OPENER_POLICY = None
 
 CORS_ALLOWED_ORIGINS = [
     "http://localhost:3000",
